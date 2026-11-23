@@ -7,6 +7,8 @@ Route.group({ prefix: "admin", as: "admin." }, () => {
     "products.create",
   );
 
+  Route.get("/products");
+
   // POST /admin/add-product
   Route.post("/add-product", productsController.postAddProduct).name(
     "products.store",
