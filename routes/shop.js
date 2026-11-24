@@ -1,9 +1,11 @@
 const { Route } = require("./router");
-const productsController = require("../controllers/product");
+const shopController = require("../controllers/shop");
 
 // GET /
-Route.get("/", productsController.getProduct).name("shop.index");
+Route.get("/", shopController.getIndex).name("shop.index");
 
-Route.get("/products");
-Route.get("/cart");
-Route.get("/checkout");
+Route.get("/products", shopController.getProducts);
+
+Route.get("/cart", shopController.getCart);
+
+Route.get("/checkout", shopController.getCheckout);
