@@ -6,6 +6,8 @@ Route.get("/", shopController.getIndex).name("shop.index");
 
 Route.get("/products", shopController.getProducts);
 
+Route.get("/products/:productId", shopController.getProduct);
+
 Route.get("/cart", shopController.getCart);
 
 Route.get("/orders", shopController.getOrders);

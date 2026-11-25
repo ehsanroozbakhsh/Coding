@@ -16,7 +16,15 @@ const { get404 } = require("./controllers/errors");
 const app = express();
 
 app.disable("x-powered-by");
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        imgSrc: ["'self'", "data:", "https:"],
+      },
+    },
+  }),
+);
 
 app.set("view engine", "ejs");
 app.set("views", "views");
